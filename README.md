@@ -8,7 +8,7 @@
 
 ### As Executable 
 
-- If you have `go` in your system, what you need to do just use `go get`
+- If you have `go` in your system, what you need to do is just to use `go get`
 
     ```shell script
     go get -u github.com/unbyte/er/cmd/er
