@@ -22,8 +22,8 @@ func init() {
 }
 
 func main() {
-	flag.Parse()
 	flag.Usage = usage
+	flag.Parse()
 
 	if !(amount > 0 && len(pattern) > 0) {
 		fmt.Println("PATTERN can't be empty and AMOUNT can't be lower than 1.")
