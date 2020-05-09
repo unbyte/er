@@ -94,7 +94,7 @@ func repeat(writer *bytes.Buffer, list []*syntax.Regexp, min, max int) error {
 	return nil
 }
 
-// Generator
+// Generator generate string(s)
 type Generator interface {
 	// Generator a random string
 	Generate() (string, error)
