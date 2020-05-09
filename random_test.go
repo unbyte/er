@@ -9,7 +9,7 @@ func TestRand(t *testing.T) {
 	a := assert.New(t)
 	for i := 0; i < 10; i++ {
 		v := RandRepeat(1<<2, 1<<6)
-		a.True(v >= (1<<2) && v < (1<<6), v)
+		a.True(v >= (1<<2) && v <= (1<<6), v)
 	}
 
 	for i := 0; i < 10; i++ {

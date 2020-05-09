@@ -127,3 +127,20 @@ func TestGenerate(t *testing.T) {
 		a.True(match, useCase)
 	}
 }
+
+func TestGenerateMultiple(t *testing.T) {
+	a := assert.New(t)
+	for _, useCase := range generateUseCases {
+		g, err := Parse(useCase, syntax.Perl)
+		a.Nil(err, useCase, err)
+		_, err = g.GenerateMultiple(0)
+		a.NotNil(err)
+		ss, err := g.GenerateMultiple(10)
+		a.Nil(err, useCase, err)
+		for _, s := range ss {
+			match, err := regexp.MatchString(useCase, s)
+			a.Nil(err, useCase, err)
+			a.True(match, useCase)
+		}
+	}
+}
