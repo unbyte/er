@@ -23,6 +23,8 @@ func init() {
 
 func main() {
 	flag.Parse()
+	flag.Usage = usage
+
 	if !(amount > 0 && len(pattern) > 0) {
 		fmt.Println("PATTERN can't be empty and AMOUNT can't be lower than 1.")
 		os.Exit(1)
@@ -49,4 +51,16 @@ func main() {
 		}
 		fmt.Println(strings.Join(s, "\n"))
 	}
+}
+
+func usage() {
+	fmt.Println(`
+Usage of ER CLI:
+  -a, -amount int
+        amount of strings to be generated. default to 1. (default 1)
+  -p, -pattern string
+        pattern string
+
+Syntax: https://golang.org/pkg/regexp/syntax/
+Unicode Class: https://en.wikipedia.org/wiki/Unicode_character_property`)
 }
